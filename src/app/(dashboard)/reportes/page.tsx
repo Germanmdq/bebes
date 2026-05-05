@@ -1,11 +1,9 @@
 'use client';
 
 import { 
-  BarChart3, 
   TrendingUp, 
   PieChart, 
   Download, 
-  Calendar,
   ArrowUpRight,
   ArrowDownRight
 } from 'lucide-react';
@@ -17,8 +15,6 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
-  LineChart,
-  Line,
   Cell
 } from 'recharts';
 import { formatCurrency } from '@/lib/utils/format';

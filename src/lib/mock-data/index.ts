@@ -1,5 +1,4 @@
 import { Consignante, Prenda, Venta, Liquidacion, Reserva } from '@/types';
-import { subDays, subMonths, addDays, startOfMonth, endOfMonth } from 'date-fns';
 
 // 8 Consignantes de ejemplo
 export const MOCK_CONSIGNANTES: Consignante[] = [

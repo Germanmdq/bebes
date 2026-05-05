@@ -2,23 +2,17 @@
 
 import { useState } from 'react';
 import { 
-  Calendar, 
   Plus, 
   Search, 
   Filter, 
-  Eye, 
   MoreHorizontal,
   Clock,
-  User,
-  Package,
-  CheckCircle,
   XCircle,
   ArrowRight
 } from 'lucide-react';
 import { MOCK_RESERVAS, MOCK_PRENDAS } from '@/lib/mock-data';
-import { formatCurrency, formatDate, formatDateTime } from '@/lib/utils/format';
+import { formatCurrency, formatDate } from '@/lib/utils/format';
 import { StatusBadge } from '@/components/ui/StatusBadge';
-import Link from 'next/link';
 
 export default function ReservasPage() {
   const [searchTerm, setSearchTerm] = useState('');

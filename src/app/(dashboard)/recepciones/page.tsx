@@ -2,15 +2,11 @@
 
 import { useState } from 'react';
 import { 
-  PackageSearch, 
   Plus, 
   Search, 
   Filter, 
   Eye, 
-  MoreHorizontal,
-  Calendar,
-  CheckCircle2,
-  Clock
+  MoreHorizontal
 } from 'lucide-react';
 import { MOCK_CONSIGNANTES } from '@/lib/mock-data';
 import { formatDate } from '@/lib/utils/format';

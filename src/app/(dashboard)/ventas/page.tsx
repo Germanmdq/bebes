@@ -2,10 +2,8 @@
 
 import { useState } from 'react';
 import { 
-  ShoppingBag, 
   Plus, 
   Search, 
-  Filter, 
   Eye, 
   MoreHorizontal,
   Calendar,
