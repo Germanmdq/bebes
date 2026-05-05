@@ -6,7 +6,7 @@ interface StatusBadgeProps {
   className?: string;
 }
 
-export function StatusBadge({ status, variant = 'prenda', className }: StatusBadgeProps) {
+export function StatusBadge({ status, className }: StatusBadgeProps) {
   const getStyles = () => {
     switch (status) {
       case 'disponible':

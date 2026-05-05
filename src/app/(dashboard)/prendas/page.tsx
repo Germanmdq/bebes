@@ -14,6 +14,7 @@ import { MOCK_PRENDAS, MOCK_CONSIGNANTES } from '@/lib/mock-data';
 import { formatCurrency, formatDate } from '@/lib/utils/format';
 import { StatusBadge } from '@/components/ui/StatusBadge';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PrendasPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -83,9 +84,9 @@ export default function PrendasPage() {
                   <tr key={p.id} className="hover:bg-slate-50/50 transition-colors group">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center overflow-hidden">
+                        <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center overflow-hidden relative">
                           {p.foto_principal_url ? (
-                            <img src={p.foto_principal_url} alt={p.nombre} className="w-full h-full object-cover" />
+                            <Image src={p.foto_principal_url} alt={p.nombre} fill className="object-cover" />
                           ) : (
                             <span className="text-[10px] text-slate-400 font-bold uppercase">{p.categoria.substring(0, 3)}</span>
                           )}

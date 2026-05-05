@@ -142,6 +142,7 @@ export interface Liquidacion {
   metodo_pago?: string;
   comprobante_url?: string;
   observaciones?: string;
+  prendas_ids: string[];
   created_at: string;
   updated_at: string;
 }

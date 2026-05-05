@@ -20,7 +20,7 @@ interface DateDisplayProps {
   withTime?: boolean;
 }
 
-export function DateDisplay({ date, className, withTime }: DateDisplayProps) {
+export function DateDisplay({ date, className }: DateDisplayProps) {
   return (
     <span className={cn("text-slate-600", className)}>
       {formatDate(date)}

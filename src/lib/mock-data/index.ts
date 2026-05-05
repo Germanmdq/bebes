@@ -269,6 +269,7 @@ export const MOCK_LIQUIDACIONES: Liquidacion[] = [
     estado: 'pagada',
     fecha_pago: '2026-05-01T12:00:00Z',
     metodo_pago: 'transferencia',
+    prendas_ids: ['p1', 'p2', 'p5', 'p10', 'p15'],
     created_at: '2026-04-30T23:59:59Z',
     updated_at: '2026-05-01T12:00:00Z',
   },
@@ -285,6 +286,7 @@ export const MOCK_LIQUIDACIONES: Liquidacion[] = [
     total_local: 15000,
     cantidad_prendas: 3,
     estado: 'pendiente',
+    prendas_ids: ['p3', 'p4', 'p6'],
     created_at: '2026-04-30T23:59:59Z',
     updated_at: '2026-04-30T23:59:59Z',
   }
