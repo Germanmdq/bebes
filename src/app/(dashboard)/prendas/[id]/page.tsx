@@ -152,7 +152,7 @@ export default function PrendaDetailPage() {
               <div className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center font-bold text-primary">
-                    {c?.nombre.charAt(0)}{c?.apellido.charAt(0)}
+                    {c?.nombre?.charAt(0) ?? ''}{c?.apellido?.charAt(0) ?? ''}
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase">Consignante</p>

@@ -41,7 +41,7 @@ export function StatCard({
               "flex items-center gap-1 text-xs font-semibold mt-2",
               trend.positive ? "text-green-600" : "text-red-600"
             )}>
-              {trend.positive ? '↑' : '↓'} {trend.trend}
+              {trend.positive ? '↑' : '↓'} {trend.value}
               <span className="text-slate-400 font-normal"> vs mes ant.</span>
             </div>
           )}
