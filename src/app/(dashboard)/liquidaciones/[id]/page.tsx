@@ -63,40 +63,40 @@ export default function LiquidacionDetailPage() {
           </div>
         </div>
 
-        <div className="p-8">
-          <table className="w-full">
-            <thead>
-              <tr className="text-[10px] font-bold text-slate-400 uppercase border-b border-slate-100">
-                <th className="text-left py-4">Prenda / Código</th>
-                <th className="text-right py-4">Precio Venta</th>
-                <th className="text-right py-4">Comisión (50%)</th>
-                <th className="text-right py-4">Subtotal</th>
+      <div className="p-8">
+        <table className="w-full">
+          <thead>
+            <tr className="text-[10px] font-bold text-slate-400 uppercase border-b border-slate-100">
+              <th className="text-left py-4">Prenda / Código</th>
+              <th className="text-right py-4">Precio Venta</th>
+              <th className="text-right py-4">Comisión (50%)</th>
+              <th className="text-right py-4">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-50">
+            {prendas.map((p) => (
+              <tr key={p.id} className="text-sm">
+                <td className="py-4">
+                  <p className="font-bold text-slate-700">{p.nombre}</p>
+                  <p className="text-xs text-slate-400 font-mono">{p.codigo}</p>
+                </td>
+                <td className="py-4 text-right text-slate-600">{formatCurrency(p.precio_actual)}</td>
+                <td className="py-4 text-right text-slate-600">{formatCurrency(p.precio_actual * 0.5)}</td>
+                <td className="py-4 text-right font-bold text-slate-700">{formatCurrency(p.precio_actual * 0.5)}</td>
               </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-50">
-              {prendas.map((p) => (
-                <tr key={p.id} className="text-sm">
-                  <td className="py-4">
-                    <p className="font-bold text-slate-700">{p.nombre}</p>
-                    <p className="text-xs text-slate-400 font-mono">{p.codigo}</p>
-                  </td>
-                  <td className="py-4 text-right text-slate-600">{formatCurrency(p.precio_actual)}</td>
-                  <td className="py-4 text-right text-slate-600">{formatCurrency(p.precio_actual * 0.5)}</td>
-                  <td className="py-4 text-right font-bold text-slate-700">{formatCurrency(p.precio_actual * 0.5)}</td>
-                </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colSpan={3} className="pt-8 text-right font-bold text-slate-500 uppercase text-[10px]">Total a Pagar</td>
-                <td className="pt-8 text-right text-3xl font-black text-primary">{formatCurrency(liq.total_a_pagar)}</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan={3} className="pt-8 text-right font-bold text-slate-500 uppercase text-[10px]">Total a Pagar</td>
+              <td className="pt-8 text-right text-3xl font-black text-primary">{formatCurrency(liq.total_a_pagar)}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
 
         <div className="p-8 bg-primary/5 flex items-center gap-4">
-          {liq.estado === 'liquidada' ? (
+          {liq.estado === 'pagada' ? (
             <>
               <CheckCircle2 className="w-6 h-6 text-green-500" />
               <p className="text-sm font-medium text-slate-700">Esta liquidación ya fue procesada y enviada.</p>
