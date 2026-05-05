@@ -9,7 +9,6 @@ import {
   Tag, 
   User, 
   Shirt, 
-  Maximize2,
   Calendar
 } from 'lucide-react';
 import { MOCK_CONSIGNANTES } from '@/lib/mock-data';

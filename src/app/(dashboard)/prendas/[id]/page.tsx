@@ -12,7 +12,9 @@ import {
   Edit2,
   Trash2,
   Package,
-  Baby
+  Baby,
+  Shirt,
+  Plus
 } from 'lucide-react';
 import { MOCK_PRENDAS, MOCK_CONSIGNANTES } from '@/lib/mock-data';
 import { formatCurrency, formatDate } from '@/lib/utils/format';
