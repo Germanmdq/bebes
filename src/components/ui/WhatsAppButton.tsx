@@ -3,12 +3,17 @@ import { cn } from '@/lib/utils';
 
 interface WhatsAppButtonProps {
   phone: string;
-  message: string;
+  message?: string;
   className?: string;
   label?: string;
 }
 
-export function WhatsAppButton({ phone, message, className, label }: WhatsAppButtonProps) {
+export function WhatsAppButton({ 
+  phone, 
+  message = 'Hola, te contacto desde Ropero Consignado.', 
+  className, 
+  label 
+}: WhatsAppButtonProps) {
   const handleClick = () => {
     const cleanPhone = phone.replace(/\D/g, '');
     const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
@@ -24,7 +29,7 @@ export function WhatsAppButton({ phone, message, className, label }: WhatsAppBut
       )}
     >
       <MessageCircle className="w-4 h-4" />
-      {label || 'Enviar WhatsApp'}
+      {label || 'WhatsApp'}
     </button>
   );
 }
