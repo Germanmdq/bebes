@@ -9,21 +9,22 @@ import {
   AlertCircle,
   ArrowRight,
   Plus,
-  ShoppingCart,
   Calculator
 } from 'lucide-react';
 import { StatCard } from '@/components/dashboard/StatCard';
 import { formatCurrency } from '@/lib/utils/format';
-import { MOCK_PRENDAS, MOCK_VENTAS, MOCK_LIQUIDACIONES } from '@/lib/mock-data';
+import { MOCK_PRENDAS, MOCK_VENTAS } from '@/lib/mock-data';
 import Link from 'next/link';
 
 export default function DashboardPage() {
+  const NOW_MS = 1778000000000; // Fixed date for demo consistency (approx May 2026)
+  
   // Cálculos simples basados en mock data
   const totalVentasMes = MOCK_VENTAS.reduce((acc, v) => acc + v.total_final, 0);
   const totalLocal = totalVentasMes * 0.5; // Simplificado 50/50
   const totalConsignantes = totalVentasMes * 0.5;
   const prendasDisponibles = MOCK_PRENDAS.filter(p => p.estado === 'disponible').length;
-  const prendasViejas = MOCK_PRENDAS.filter(p => p.estado === 'disponible' && new Date(p.fecha_ingreso) < new Date(Date.now() - 60 * 24 * 60 * 60 * 1000)).length;
+  const prendasViejas = MOCK_PRENDAS.filter(p => p.estado === 'disponible' && new Date(p.fecha_ingreso).getTime() < (NOW_MS - 60 * 24 * 60 * 60 * 1000)).length;
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
@@ -130,7 +131,7 @@ export default function DashboardPage() {
             <Link href="/ventas" className="text-sm font-semibold text-primary hover:underline">Ver todas</Link>
           </div>
           
-          <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+          <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm overflow-x-auto">
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-slate-50 border-b border-slate-100">

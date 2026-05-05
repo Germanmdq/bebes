@@ -1,9 +1,7 @@
 'use client';
 
 import { 
-  Package, 
   Shirt, 
-  CheckCircle, 
   Clock, 
   AlertCircle,
   TrendingDown,
@@ -14,12 +12,14 @@ import { MOCK_PRENDAS } from '@/lib/mock-data';
 import { StatCard } from '@/components/dashboard/StatCard';
 
 export default function InventarioPage() {
+  const NOW_MS = 1778000000000;
+
   const stats = {
     total: MOCK_PRENDAS.length,
     disponibles: MOCK_PRENDAS.filter(p => p.estado === 'disponible').length,
     vendidas: MOCK_PRENDAS.filter(p => p.estado === 'vendida' || p.estado === 'pendiente_liquidacion' || p.estado === 'liquidada' || p.estado === 'pagada').length,
     reservadas: MOCK_PRENDAS.filter(p => p.estado === 'reservada').length,
-    vencidas: MOCK_PRENDAS.filter(p => p.estado === 'disponible' && new Date(p.fecha_ingreso) < new Date(Date.now() - 60 * 24 * 60 * 60 * 1000)).length,
+    vencidas: MOCK_PRENDAS.filter(p => p.estado === 'disponible' && new Date(p.fecha_ingreso).getTime() < (NOW_MS - 60 * 24 * 60 * 60 * 1000)).length,
     noAceptadas: MOCK_PRENDAS.filter(p => p.estado === 'no_aceptada').length,
     donadas: MOCK_PRENDAS.filter(p => p.estado === 'donada').length,
   };
@@ -60,7 +60,7 @@ export default function InventarioPage() {
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                     <div 
                       className="bg-primary h-full rounded-full transition-all duration-500" 
-                      style={{ width: `${(cat.cantidad / stats.disponibles) * 100}%` }}
+                      style={{ width: `${(cat.cantidad / Math.max(1, stats.disponibles)) * 100}%` }}
                     />
                   </div>
                 </div>

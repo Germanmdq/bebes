@@ -7,11 +7,10 @@ import {
   MoreHorizontal, 
   MessageCircle, 
   Eye, 
-  Edit2,
-  Filter
+  Filter,
+  Users
 } from 'lucide-react';
 import { MOCK_CONSIGNANTES, MOCK_PRENDAS } from '@/lib/mock-data';
-import { formatCurrency } from '@/lib/utils/format';
 import { StatusBadge } from '@/components/ui/StatusBadge';
 import Link from 'next/link';
 

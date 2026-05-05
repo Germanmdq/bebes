@@ -12,7 +12,8 @@ import {
   History,
   Edit2,
   MoreHorizontal,
-  Plus
+  Plus,
+  Eye
 } from 'lucide-react';
 import { MOCK_CONSIGNANTES, MOCK_PRENDAS, MOCK_LIQUIDACIONES } from '@/lib/mock-data';
 import { formatCurrency, formatDate } from '@/lib/utils/format';
