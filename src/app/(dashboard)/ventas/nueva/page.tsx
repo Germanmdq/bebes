@@ -173,6 +173,7 @@ export default function NuevaVentaPage() {
               ].map((m) => (
                 <button
                   key={m.id}
+                  onClick={() => setMetodoPago(m.id as 'efectivo' | 'debito' | 'credito' | 'mercado_pago')}
                   className={cn(
                     "flex flex-col items-center gap-2 p-4 rounded-2xl border-2 transition-all",
                     metodoPago === m.id 

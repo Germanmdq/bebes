@@ -70,7 +70,7 @@ export default function ConsignanteDetailPage() {
           <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center text-3xl font-black text-primary mb-4">
-                {c.nombre.charAt(0)}{c.apellido.charAt(0)}
+                {c.nombre.charAt(0)}{c.apellido?.charAt(0) || ''}
               </div>
               <h1 className="text-2xl font-black text-slate-800">{c.nombre} {c.apellido}</h1>
               <div className="mt-2">
